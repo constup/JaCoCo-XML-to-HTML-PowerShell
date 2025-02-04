@@ -1,0 +1,45 @@
+$Global:jacocoxml2htmlConfig = [PSCustomObject]@{
+# Mandatory properties. If a property is not provided here, the script will fail:
+    # Your coverage XML file in JaCoCo format.
+    # 'xml_file' = '';
+    # Destination directory where HTML report will be generated.
+    # 'destination_directory' = '';
+    # Root directory of your source code files.
+    # 'sources_directory' = '';
+# Optional properties. If a property is not provided here, a default value will be used:
+    # Background color of a line number for partially covered code in source code view. Applied in light theme.
+    # 'line_number_yellow_light' = '#ffffc8';
+    # Background color of a source code line for partially covered code in source code view. Applied in light theme.
+    # 'source_code_yellow_light' = '#fffff0';
+    # Background color of a line number for missed code in source code view. Applied in light theme.
+    # 'line_number_red_light' = '#ffc8c8';
+    # Background color of a source code line for missed code in source code vew. Applied in light theme.
+    # 'source_code_red_light' = '#fff0f0';
+    # Background color of a line number for covered code in source code view. Applied in light theme.
+    # 'line_number_green_light' = '#c8ffc8';
+    # Background color of a source code line for covered code in source code view. Applied in light theme.
+    # 'source_code_green_light' = '#f0fff0';
+    # Page theme. Possible values: 'light' and 'dark'
+    # 'theme' = 'light';
+    # Background color of a line number for partially covered code in source code view. Applied in dark theme.
+    # 'line_number_yellow_dark' = '#ffffc8';
+    # Background color of a source code line for partially covered code in source code vew. Applied in dark theme.
+    # 'source_code_yellow_dark' = '#fffff0';
+    # Background color of a line number for missed code in source code view. Applied in dark theme.
+    # 'line_number_red_dark' = '#ffc8c8';
+    # Background color of a source code line for missed code in source code vew. Applied in dark theme.
+    # 'source_code_red_dark' = '#fff0f0';
+    # Background color of a line number for covered code in source code view. Applied in dark theme.
+    # 'line_number_green_dark' = '#c8ffc8';
+    # Background color of a source code line for covered code in source code view. Applied in dark theme.
+    # 'source_code_green_dark' = '#f0fff0';
+    # CSS file used to render a light theme for source code display. See available themes in assets/highlightjs/build/styles
+    # 'source_code_theme_light' = 'vs.min.css';
+    # CSS file used to render a dark theme for source code display. See available themes in assets/highlightjs/build/styles
+    # 'source_code_theme_dark' = 'vs2015.min.css';
+# Optional properties with no default values. If no value is set, the option will not be used.
+    # Custom CSS file to be included in all group pages (home page, package pages, group pages,...)
+    # 'group_page_custom_css' = '/path/to/your/custom.css'
+    # Custom CSS file to be included in all pages which are displaying source code.
+    # 'source_page_custom_css' = '/path/to/your/custom.css'
+}

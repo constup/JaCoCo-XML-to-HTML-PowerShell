@@ -1,0 +1,127 @@
+= Configuration
+:toc:
+:toclevels: 5
+
+== Configuration template
+
+Configuration template file is available at link:../config.ps1.dist[`config.ps1.dist`]. You are free to copy the file to
+your project, uncomment and configure individual options. Just remember to remove the `.dist` extension.
+
+[NOTE]
+====
+The link:../config.ps1.dist[`config.ps1.dist`] file contains all available configuration properties.
+====
+
+== Mandatory configuration
+
+The only mandatory properties in the configuration file are:
+
+* `xml_file`: the coverage report XML file;
+* `destination_directory`: where you want to save the HTML report. This directory must be empty. The directory will be
+created if it does not exist;
+* `sources_directory`: root directory where your project's source code is (usually `src/` directory in your project)
+
+=== File and directory paths
+
+An absolute path to a file or directory works best, if you know it in advance. However, this tool supports dynamic paths
+as well. constUP JaCoCo XML to HTML configuration file is made of a simple `PSCustomObject`, which means that you can
+use PowerShell to define a path to a file or directory.
+
+For example, let's take a look at the configuration file in this project.
+
+link:../config.ps1[config.ps1]:
+[source,powershell]
+----
+$Global:jacocoxml2htmlConfig = [PSCustomObject]@{
+    'xml_file' = "$PSScriptRoot\coverage\coverage.xml";
+    'destination_directory' = "$PSScriptRoot\coverage\html";
+    'sources_directory' = "$PSScriptRoot\src";
+}
+----
+
+`$PSScriptRoot` is PowerShell's built-in link:https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.5#psscriptroot[Automatic variable]
+and can be used when setting up a path to a file or directory. You can also use other built-in PowerShell tools, like
+link:https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/join-path[`Join-Path`] or
+link:https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/resolve-path[`Resolve-Path`],
+if needed.
+
+== Optional configuration
+
+constUP JaCoCo XML to HTML has built-in default configuration for many options. These options can be changed by setting
+their values in your configuration file.
+
+=== Theme configuration
+
+HTML reports can be generated in either light (default) or dark theme. You can configure other options for the type of
+theme you are planning to use. If you want to use a dark theme, only dark theme related configuration options are
+relevant. If a configuration option is relevant to a specific theme, it will have either `_light` or `_dark` suffix in
+its name.
+
+You can also include your own custom CSS file by providing a path to the CSS file in `group_page_custom_css` and/or
+`source_page_custom_css` properties.
+
+[NOTE]
+====
+link:https://highlightjs.org[HighlightJS] is used to render source code blocks. Preview of themes for source code blocks
+is available on the link:https://highlightjs.org/demo[HighlightJS Demo page].
+====
+
+[IMPORTANT]
+====
+All configuration options in the table below which have `_light` suffix also have their `_dark` variant. Description is
+pretty much the same, the only difference being that the option is applied when dark theme is used.
+====
+
+|===
+|property |description |default value
+
+|`theme`
+|Page theme. Possible values: `light`, `dark`.
+|`light`
+
+|`source_code_theme_light`
+|CSS file used to render a light theme for source code display. See which themes are available in
+link:../assets/highlightjs/build/styles/[`styles`] directory.
+| `vs.min.css`
+
+|`source_code_theme_dark`
+|CSS file used to render a dark theme for source code display. See which themes are available in
+link:../assets/highlightjs/build/styles/[`styles`] directory.
+|`vs2015.min.css`
+
+|`line_number_yellow_light`
+|Background color of a line number for partially covered code in source code view. Applied in a light theme. Uses HEX
+RGB values.
+|`#ffffc8`
+
+|`line_number_red_light`
+|Background color of a line number for missed code in source code view. Applied in a light theme. Uses HEX RGB values.
+|`#ffc8c8`
+
+|`line_number_green_light`
+|Background color of a line number for covered code in source code view. Applied in a light theme. Uses HEX RGB values.
+|`#c8ffc8`
+
+|`source_code_yellow_light`
+|Background color of a source code line for partially covered code in source code view. Applied in a light theme. Uses
+HEX RGB values.
+|`#fffff0`
+
+|`source_code_red_light`
+|Background color of a source code line for missed code in source code vew. Applied in a light theme. Uses HEX RGB
+values.
+|`#fff0f0`
+
+|`source_code_green_light`
+|Background color of a source code line for covered code in source code view. Applied in a light theme. Uses HEX RGB
+values.
+|`#f0fff0`
+
+|`group_page_custom_css`
+|Custom CSS file to be included in all group pages (home page, package pages, group pages,...)
+|no default value
+
+|`source_page_custom_css`
+|Custom CSS file to be included in all pages which are displaying source code.
+|no default value
+|===

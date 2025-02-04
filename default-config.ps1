@@ -1,0 +1,19 @@
+$Global:jacocoxml2htmlConfig = [PSCustomObject]@{
+    # light theme
+    'source_code_theme_light' = 'vs.min.css';
+    'line_number_yellow_light' = '#ffffc8';
+    'line_number_red_light' = '#ffc8c8';
+    'line_number_green_light' = '#c8ffc8';
+    'source_code_yellow_light' = '#fffff0';
+    'source_code_red_light' = '#fff0f0';
+    'source_code_green_light' = '#f0fff0';
+    # dark theme
+    'source_code_theme_dark' = 'vs2015.min.css';
+    'line_number_yellow_dark' = '#ffffc840';
+    'line_number_red_dark' = '#ffc8c840';
+    'line_number_green_dark' = '#c8ffc840';
+    'source_code_yellow_dark' = '#ffff8c20';
+    'source_code_red_dark' = '#ff8c8c20';
+    'source_code_green_dark' = '#8cff8c20';
+    'theme' = 'light';
+}
