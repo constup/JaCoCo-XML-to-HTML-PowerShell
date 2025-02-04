@@ -32,7 +32,9 @@ $config.CodeCoverage.OutputFormat = 'JaCoCo'
 
 Invoke-Pester -Configuration $config
 . ("$PSScriptRoot\config.ps1")
-Remove-Item -Path $Global:jacocoxml2htmlConfig.destination_directory -Recurse -Force
+if (Test-Path -Path $Global:jacocoxml2htmlConfig.destination_directory) {
+    Remove-Item -Path $Global:jacocoxml2htmlConfig.destination_directory -Recurse -Force
+}
 & .\constup-jacoco-xml-to-html -config .\config.ps1
 ----
 
