@@ -47,7 +47,7 @@ Clone the repository:
 
 [source,shell]
 ----
-git clone https://github.com/constup/JaCoCoXML-to-HTML-PowerShell .
+git clone https://github.com/constup/JaCoCo-XML-to-HTML-PowerShell .
 ----
 
 or download and unpack a release from link:https://github.com/constup/JaCoCoXML-to-HTML-PowerShell/releases[Releases page]
