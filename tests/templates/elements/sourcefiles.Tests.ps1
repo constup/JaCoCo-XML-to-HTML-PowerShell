@@ -9,8 +9,6 @@ Describe 'Render-SourcefileRow' {
         $template = @'
 <!--page.location-->
 <!--item.name-->
-<!--classes.count-->
-<!--sourcefiles.count-->
 <!--counter.instructions-->
 <!--counter.branches-->
 <!--counter.lines-->
@@ -23,8 +21,6 @@ something
         $expected = @'
 ../../../sources/directory\sample.ps1.html
 sample.ps1
-2
-4
 1 - 66 - 67 - 98.51%
 
 1 - 53 - 54 - 98.15%

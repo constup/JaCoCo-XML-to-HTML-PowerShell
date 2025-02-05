@@ -20,8 +20,6 @@ function Render-SourcefileRow {
     $name = Split-Path -Path $object.'@name' -Leaf
     $result = $result.Replace('<!--page.location-->', $pageLocation)
     $result = $result.Replace('<!--item.name-->', $name)
-    $result = $result.Replace('<!--classes.count-->', $object.'class'.Count)
-    $result = $result.Replace('<!--sourcefiles.count-->', $object.sourcefile.Count)
 
     $result = Render-CounterRowData -template $result -counters $object.counter -counterType 'INSTRUCTION' -placeholder '<!--counter.instructions-->'
     $result = Render-CounterRowData -template $result -counters $object.counter -counterType 'BRANCH' -placeholder '<!--counter.branches-->'
