@@ -32,28 +32,6 @@ something
         $expected = $expected.Replace("`r`n", "`n")
         $object = [PSCustomObject]@{
             "@name" = "directory\sample.ps1";
-            "class" = [PSCustomObject[]]@(
-                [PSCustomObject]@{
-                    "something" = "lorem ipsum";
-                },
-                [PSCustomObject]@{
-                    "something_else" = "lorem ipsum dolor";
-                }
-            );
-            "sourcefile" = [PSCustomObject[]]@(
-                [PSCustomObject]@{
-                    "something" = "lorem ipsum";
-                },
-                [PSCustomObject]@{
-                    "something_else" = "lorem ipsum dolor";
-                },
-                [PSCustomObject]@{
-                    "something" = "lorem ipsum";
-                },
-                [PSCustomObject]@{
-                    "something_else" = "lorem ipsum dolor";
-                }
-            );
             "counter" = [PSCustomObject[]]@(
                 [PSCustomObject]@{
                     "@type" = "INSTRUCTION";
@@ -106,28 +84,6 @@ sample row template
         $objects = [PSCustomObject[]]@(
             [PSCustomObject]@{
                 "@name" = "directory\sample.ps1";
-                "class" = [PSCustomObject[]]@(
-                    [PSCustomObject]@{
-                        "something" = "lorem ipsum";
-                    },
-                    [PSCustomObject]@{
-                        "something_else" = "lorem ipsum dolor";
-                    }
-                );
-                "sourcefile" = [PSCustomObject[]]@(
-                    [PSCustomObject]@{
-                        "something" = "lorem ipsum";
-                    },
-                    [PSCustomObject]@{
-                        "something_else" = "lorem ipsum dolor";
-                    },
-                    [PSCustomObject]@{
-                        "something" = "lorem ipsum";
-                    },
-                    [PSCustomObject]@{
-                        "something_else" = "lorem ipsum dolor";
-                    }
-                );
                 "counter" = [PSCustomObject[]]@(
                     [PSCustomObject]@{
                         "@type" = "INSTRUCTION";
