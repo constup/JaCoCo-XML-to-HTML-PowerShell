@@ -13,4 +13,4 @@ Invoke-Pester -Configuration $config
 if (Test-Path -Path $Global:jacocoxml2htmlConfig.destination_directory) {
     Remove-Item -Path $Global:jacocoxml2htmlConfig.destination_directory -Recurse -Force
 }
-& .\constup-jacoco-xml-to-html -config .\config.ps1
+& .\constup-jacoco-xml-to-html.ps1 -config .\config.ps1

@@ -25,7 +25,7 @@ function Render-Groups {
 
     foreach ($group in $groups) {
         $groupName = $group.'@name'
-        $destination = "$destinationDirectory\groups\$groupName.html"
+        $destination = "$destinationDirectory/groups/$groupName.html"
         $directoryDepth = ($destination -split '[\\/]').Count - ($destinationDirectory -split '[\\/]').Count - 1
 
         $content = Render-IndexPage `
@@ -78,7 +78,7 @@ function Render-Sourcefiles {
     )
     foreach ($sourcefile in $sourcefiles) {
         $sourcefileName = $sourcefile.'@name'
-        $destination = "$destinationDirectory\sources\$sourcefileName.html"
+        $destination = "$destinationDirectory/sources/$sourcefileName.html"
         $directoryDepth = ($destination -split '[\\/]').Count - ($destinationDirectory -split '[\\/]').Count - 1
         $sourceCodePath = (Resolve-Path "$sourcesDirectory/$sourcefileName").Path
         $sourceCode = Get-Content -Raw -Path $sourceCodePath
@@ -118,7 +118,7 @@ function Render-Packages {
 
     foreach ($package in $packages) {
         $packageName = $package.'@name'
-        $destination = "$destinationDirectory\packages\$packageName.html"
+        $destination = "$destinationDirectory/packages/$packageName.html"
         $directoryDepth = ($destination -split '[\\/]').Count - ($destinationDirectory -split '[\\/]').Count - 1
 
         $content = Render-IndexPage `
