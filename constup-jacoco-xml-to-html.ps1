@@ -3,4 +3,6 @@ param (
     [String]$config
 )
 
-& .\src\main.ps1 -config $config
+. (Resolve-Path "$PSScriptRoot/src/main.ps1").Path
+
+Run-Flow -config $config
